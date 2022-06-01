@@ -1,12 +1,16 @@
-const startButton = document.getElementById('btn-start')
-const nextButton = document.getElementById('btn-next')
-const questionContainerElement = document.getElementById('questions-container')
-const questionElement = document.getElementById("question")
-const answerButtonsElement = document.getElementById("answer-buttons")
+const startButton = document.getElementById('start');
+const nextButton = document.getElementById('next');
+const questionContainerElement = document.getElementById('questions-container');
+const questionElement = document.getElementById("question");
+const answerButtonsElement = document.getElementById("answer-buttons");
 
-let shuffledQuestions, currentQuestionIndex
+let shuffledQuestions, currentQuestionIndex;
 
 startButton.addEventListener('click', startGame);
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++
+    setNextQuestion()
+})
 
 function startGame() {
     console.log('Started')
@@ -34,6 +38,7 @@ function showQuestion(question) {
         button.addEventListener('click', selectAnswer)
         answerButtonsElement.appendChild(button)
     })
+    nextButton.classList.remove('hide')
 }
 
 function resetState() {
@@ -49,6 +54,12 @@ function selectAnswer() {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide')
+    } else  {
+        startButton.innerText = 'Restart'
+        startButton.classList.remove('hide')
+    }
 }
 
 function setStatusClass(element, correct) {
@@ -66,10 +77,21 @@ function setStatusClass(element, correct) {
  }
 const questions = [
     {
-        question: "What is 2+2",
+        question: "What is a div tag for in HTML?",
         answers: [
-            { text: "4", correct: true },
-            { text: "22", correct: false}
+            { text: "it defines a division or a section", correct: true },
+            { text: "it divides the page", correct: false},
+            { text: "it marks where the page begins", correct: false},
+            { text: "it defines a class", correct: false}
+        ]
+    },
+    {
+        question: "Where would you find the line 'display: flex'?",
+        answers: [
+            { text: "HTML", correct: false},
+            { text: "CSS", correct: true},
+            { text: "Javascript", correct: false},
+            { text: "None of the Above", correct: false}
         ]
     }
 ]

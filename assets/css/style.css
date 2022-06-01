@@ -32,7 +32,7 @@
       padding: 0px 200px;
   }
 
-  .btn, .btn-start, .btn-next {
+  .btn, .btn-next {
       outline: none;
       border: none;
       display: grid;
@@ -44,6 +44,19 @@
       color: var(--secondary);
       gap: 10px;
       margin: 15px 0;
+  }
+
+  .btn-start {
+    outline: none;
+    border: none;
+    display: flex;
+    margin: 100px 200px;
+    padding: 20px 25px;
+    background: var(--primary);
+    font-size: 26px;
+    border-radius: 15px;
+    position: relative;
+    color: var(--secondary);
   }
 
   .btn:hover, .btn-start:hover, .btn-next:hover {
