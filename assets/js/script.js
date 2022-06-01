@@ -127,5 +127,41 @@ const questions = [
             { text: "<title> section", correct: false}
         ]
     },
+    {
+        question: "Inside which HTML element do we put the Javascript?",
+        answers: [
+            { text: "<scripting>", correct: false},
+            { text: "<js>", correct: false},
+            { text: "<javascript>", correct: false},
+            { text: "<script>", correct: true}
+        ]
+    },
+    {
+        question: "What does HTML stand for?",
+        answers: [
+            { text: "Hypertext Markup Language", correct: true},
+            { text: "Hyper Training Marking Language", correct: false},
+            { text: "Hyper Text Marketing Language", correct: false},
+            { text: "Hypertext Markup Leveler", correct: false}
+        ]
+    },
+    {
+        question: "Which of these is NOT a programming language?",
+        answers: [
+            { text: "Python", correct: false},
+            { text: "Java", correct: false},
+            { text: "Banana", correct: true},
+            { text: "Ruby", correct: false}
+        ]
+    },
+    {
+        question: "What is the value called that defines colors such as #FFF0F0?",
+        answers: [
+            { text: "Decimal Value", correct: false},
+            { text: "Hex Value", correct: true},
+            { text: "RGB Value", correct: false},
+            { text: "Color Value", correct: false}
+        ]
+    },
 ]
 

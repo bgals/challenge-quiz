@@ -23,6 +23,8 @@
   .container {
     width: 800px;
     max-width: 80%;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     border-radius: 5px;
     padding: 10px;
