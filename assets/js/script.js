@@ -6,12 +6,14 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 
 let shuffledQuestions, currentQuestionIndex;
 
+//start button 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
 
+//timer code
 const timerEl = document.createElement('div');
 document.body.append(timerEl)
 let originalTimer = 30;
@@ -28,6 +30,7 @@ function countdown(time) {
 
 countdown(originalTimer)
 
+//start button initiates gameplay
 function startGame() {
     console.log('Started')
     startButton.classList.add('hide')
@@ -42,6 +45,7 @@ function setNextQuestion() {
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
+//shows question and answer buttons
 function showQuestion(question) {
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
@@ -63,6 +67,8 @@ function resetState() {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
 }
+
+//answer button selected
 function selectAnswer() {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
@@ -77,7 +83,7 @@ function selectAnswer() {
         startButton.classList.remove('hide')
     }
 }
-
+//right or wrong answers defined
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
@@ -91,10 +97,12 @@ function setStatusClass(element, correct) {
      element.classList.remove("correct")
      element.classList.remove("wrong")
  }
+
+ //questions and answers for quiz
 const questions = [
     {
         question: "What is a div tag for in HTML?",
-        answers: [
+        answers: [ 
             { text: "it defines a division or a section", correct: true },
             { text: "it divides the page", correct: false},
             { text: "it marks where the page begins", correct: false},
@@ -109,5 +117,15 @@ const questions = [
             { text: "Javascript", correct: false},
             { text: "None of the Above", correct: false}
         ]
-    }
+    },
+    {
+        question: "Where is Javascript placed inside an HTML document?",
+        answers: [
+            { text: "<footer> section", correct: false},
+            { text: "<body> and <head> sections", correct: true},
+            { text: "<meta> section", correct: false},
+            { text: "<title> section", correct: false}
+        ]
+    },
 ]
+

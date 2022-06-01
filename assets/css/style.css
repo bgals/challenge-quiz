@@ -20,6 +20,14 @@
       height: 100vh;
   }
 
+  .container {
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
   header {
       text-align: center;
       padding: 0;
@@ -64,10 +72,20 @@
       color: var(--primary);
   }
 
-  .container {
-      width: 800px;
-      max-width: 80%;
-      background-color: white;
-      border-radius: 5px;
-      padding: 10px;
+  .btn.correct {
+      background-color: green;
+  }
+
+  .btn.wrong {
+      background-color: red;
+  }
+
+  .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .hide {
+      display: none;
   }
