@@ -12,6 +12,22 @@ nextButton.addEventListener('click', () => {
     setNextQuestion()
 })
 
+const timerEl = document.createElement('div');
+document.body.append(timerEl)
+let originalTimer = 30;
+timerEl.textContent = 0;
+
+function countdown(time) {
+    if (time <= 0) return;
+    setTimeout(function() {
+        timerEl.textContent = time;
+        time--;
+        countdown(time);
+}, 1000)
+}
+
+countdown(originalTimer)
+
 function startGame() {
     console.log('Started')
     startButton.classList.add('hide')
