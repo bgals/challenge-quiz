@@ -1,0 +1,60 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  :root {
+      --primary: #4B0082;
+      --secondary: #d8bfd8;
+
+  }
+
+  body {
+      background: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+  }
+
+  header {
+      text-align: center;
+      padding: 0;
+      margin: 0;
+  }
+
+  .page-title {
+      font-size: 48px;
+      display: flex;
+      padding: 0px 200px;
+  }
+
+  .btn, .btn-start, .btn-next {
+      outline: none;
+      border: none;
+      display: grid;
+      padding: 20px 25px;
+      background: var(--primary);
+      font-size: 26px;
+      border-radius: 15px;
+      position: relative;
+      color: var(--secondary);
+      gap: 10px;
+      margin: 15px 0;
+  }
+
+  .btn:hover, .btn-start:hover, .btn-next:hover {
+      background-color: var(--secondary);
+      color: var(--primary);
+  }
+
+  .container {
+      width: 800px;
+      max-width: 80%;
+      background-color: white;
+      border-radius: 5px;
+      padding: 10px;
+  }
